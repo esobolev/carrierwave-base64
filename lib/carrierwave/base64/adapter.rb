@@ -38,6 +38,8 @@ module Carrierwave
         # rubocop:enable Metrics/CyclomaticComplexity
         # rubocop:enable Metrics/PerceivedComplexity
       end
+    
+      alias_method "#{attribute}_data_uri=", "#{attribute}="
     end
   end
 end
