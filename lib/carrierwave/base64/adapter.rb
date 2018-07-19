@@ -38,7 +38,7 @@ module Carrierwave
         alias_method "#{attribute}_data_uri=", "#{attribute}="
       
         define_method "#{attribute}_data_uri" do 
-          eval "#{attribute}.blank? ? '' : Base64.encode64(#{attribute}.read)"
+          eval "#{attribute}.blank? ? '' : ::Base64.encode64(#{attribute}.read)"
         end
       
         # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
