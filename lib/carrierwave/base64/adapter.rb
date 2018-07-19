@@ -34,12 +34,13 @@ module Carrierwave
 
           super Carrierwave::Base64::Base64StringIO.new(data.strip, filename)
         end
+        
+        alias_method "#{attribute}_data_uri=", "#{attribute}="
+      
         # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
         # rubocop:enable Metrics/CyclomaticComplexity
         # rubocop:enable Metrics/PerceivedComplexity
       end
-    
-      alias_method "#{attribute}_data_uri=", "#{attribute}="
     end
   end
 end
